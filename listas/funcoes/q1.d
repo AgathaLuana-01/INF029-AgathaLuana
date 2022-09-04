@@ -1,1 +1,1 @@
-q1.o: Listas/funcoes/q1.c
+q1.o: listas/funcoes/q1.c
