@@ -7,13 +7,50 @@ masculino; f e F para feminino, o e O para outro).
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-#define N 20
+#include <locale.h>
 
-struct Cliente{
-    char nome[30];
-    char sexo[1];
-    char cpf[13];
-    int nascimento;
+
+typedef struct{
+    char nome[20];
+    char sexo[2];
+    
+}cliente;
+
+cliente cadastrarCliente(cliente cadastro);
+int contaCaractersNome(char verificaNome[]);
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    
+    cliente cadastro;
+    
+    printf("Cadastro de clientes: ");
+    cadastro = cadastrarCliente(cadastro);
+    
+   //descobri pq n vai
+   printf("Nome cadastrado: %s", cadastro.nome);
+
+}
+
+cliente cadastrarCliente(cliente cadastro){
+    char guardaNome[101];
+    printf("Nome: ");
+    fgets(guardaNome, 100, stdin);
+    contaCaractersNome(guardaNome);
+    return cadastro;
+}
+
+int contaCaractersNome(char verificaNome[]){
+ int tamanho;
+ cliente cliente_1;
+ tamanho = strlen(verificaNome) - 1;
+    
+    if(tamanho > 20){
+        printf("Erro!! Quantidade de caracters superior a 20!");
+    } else {
+        strcpy(cliente_1.nome, verificaNome);
+        //puts(cliente_1.nome);
+    }
 }
